@@ -1,0 +1,16 @@
+.Searchbar {
+  margin: 50px auto;
+}
+.Searchbar input {
+  width: 100%;
+  max-width: 380px;
+  outline: none;
+  padding: 15px 10px;
+  margin: auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+.Searchbar input:focus {
+  background-color: #eee;
+  border: 2px solid #ccc;
+}

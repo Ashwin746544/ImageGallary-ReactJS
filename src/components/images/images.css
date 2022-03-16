@@ -1,0 +1,23 @@
+.images-container {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .images-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .images-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .images-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
