@@ -12,23 +12,24 @@ const Searchbar = (props) => {
   const [searchedText, setSearchedText] = useState('');
   console.log("SearchBar Rendered!");
 
+  const { storeFetchedImages, storeLoadingState } = props;
   useEffect(() => {
     const id = setTimeout(() => {
       // setIsLoading(true);
-      props.storeLoadingState(true);
+      storeLoadingState(true);
       console.log('fetching images...  ' + searchedText);
-      unsplash.search.getPhotos({ query: searchedText == '' ? 'user' : searchedText, page: 1, perPage: 15 })
+      unsplash.search.getPhotos({ query: searchedText === '' ? 'user' : searchedText, page: 1, perPage: 15 })
         .then(res => {
           console.log(res);
           // setFetchedImages(res.response.results);
           // setIsLoading(false);
-          props.storeFetchedImages(res.response.results);
-          props.storeLoadingState(false);
+          storeFetchedImages(res.response.results);
+          storeLoadingState(false);
         }
         );
-    }, searchedText == '' ? 0 : 500);
+    }, searchedText === '' ? 0 : 500);
     return () => { clearTimeout(id) };
-  }, [searchedText]);
+  }, [searchedText, storeFetchedImages, storeLoadingState]);
 
   const updateSearchTextHandler = (text) => {
     setSearchedText(text);
