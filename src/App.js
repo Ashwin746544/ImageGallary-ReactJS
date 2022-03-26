@@ -4,8 +4,6 @@ import Searchbar from './components/Searchbar/Searchbar';
 import Images from './components/images/images';
 
 function App() {
-  // hello this comment is for understanding git stash command
-  console.log("to understand git Stash command");
   console.log("App Rendered!");
   const [fetchedImages, setFetchedImages] = useState([]);
 
